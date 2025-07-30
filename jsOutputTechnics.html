@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function QueryString() {
+      params = new URLSearchParams(location.search);
+      document.getElementById('lblCategory').textContent = params.get('category');
+      document.getElementById('lblModel').textContent = params.get('model');
+      document.getElementById('lblBrand').textContent = params.get('brand');
+
+      // O/P:
+      // Category
+      //   iphon
+      // Model
+      //   s6
+      // Brand
+      //   apple
+    }
+
+    function PromtInput() {
+      category = prompt("Enter Category:");
+      model = prompt("Enter Model:");
+      brand = prompt("Enter Brand:");
+      document.getElementById("lblCat").textContent = category;
+      document.getElementById("lblBra").textContent = model;
+      document.getElementById("lblMod").textContent = brand;
+
+      // O/P:
+      // Category
+      //   Galexy
+      // Model
+      //   samsung
+      // Brand
+      //   s6
+    }
+  </script>
+</head>
+<body>
+  <button onclick="QueryString()">Query String</button>
+  <dl>
+    <dt>Category</dt>
+    <dd id="lblCategory"></dd>
+    <dt>Model</dt>
+    <dd id="lblModel"></dd>
+    <dt>Brand</dt>
+    <dd id="lblBrand"></dd>
+  </dl>
+
+  <button onclick="PromtInput()">Promt Input</button>
+  <dl>
+    <dt>Category</dt>
+    <dd id="lblCat"></dd>
+    <dt>Model</dt>
+    <dd id="lblMod"></dd>
+    <dt>Brand</dt>
+    <dd id="lblBra"></dd>
+  </dl>
+</body>
+</html>

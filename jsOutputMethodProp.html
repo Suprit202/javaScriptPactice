@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  function DeleteClick()
+  {
+    //Alert
+    // alert('welcome');
+    // alert(2+4);
+    alert((2+4) + " statment deleted");
+  }
+  
+  function ConformClick()
+  {
+    //Conform
+    confirm('Are you really want to log out?');
+    if(confirm){
+      alert('Logout Successfully!')
+    }
+    else{
+      alert('Logout Cancelled!')
+    }
+  }
+
+  function DocumentWriteClick()
+  {
+    //Document Write
+    result = confirm('Are you sure?');
+
+    if (result == true) {
+      document.write("<font color = red>Deleted successfully</font> <br>")
+    } else {
+      alert('Canceled')
+    }
+  }
+
+  function TextContent()
+  {
+    //textContent & innerText
+    // document.querySelector('p').innerHTML = 'Welcome';
+    document.querySelector('p').textContent = 'Welcome';
+  }
+
+  function OuterHtml()
+  {
+    //Outer Html
+    // document.querySelector('p').innerHTML = 'Welcome';
+    document.querySelector('p').outerHTML = '<h1>ECMA 6</h1>';
+  }
+
+  function Console()
+  {
+    //Console Methods
+    console.warn('Delete Method Clicked - you initiated Delete');
+    result = confirm('Are You Sure?');
+
+    if (result) {
+      console.error('Ok clicked - delete confirmed');
+      console.log('deleted');
+      console.info('Need any help?');
+      document.write('<font>Delete Successfully</font>')
+    } else {
+      document.querySelector('p').textContent = 'Canceled...'
+    }
+  }
+</script>
+<body>
+  <button onclick="DeleteClick()">Alert</button>
+  <button onclick="ConformClick()">Delete</button>
+  <button onclick="DocumentWriteClick()">Document Write</button>
+  <button onclick="TextContent()">TextContent</button>
+  <button onclick="OuterHtml()">outerHtml</button>
+  <button onclick="Console()">Console Method</button>
+  <div>
+    <p></p>
+  </div>
+</body>
+</html>
