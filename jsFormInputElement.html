@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./node_modules//bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="./src/script/form.js"></script>
+  <title>Document</title>
+</head>
+<body class="container-fluid">
+  <div class="row mt-4">
+    <div class="col-6">
+      <dl class="w-50">
+        <h1>Register Product</h1>
+        <dt>Product Name</dt>
+        <dd><input type="text" id="txtName" class="form-control"></dd>
+        <dt>Price</dt>
+        <dd><input type="number" id="txtPrice" min="1000" max="10000" value="1000"></dd>
+        <dt>Rating</dt>
+        <dd><input type="range" id="txtRating" min="1" max="5" class="form-range" value="1"></dd>
+        <dt>Stock</dt>
+        <dd class="form-switch"><input type="checkbox" id="txtStock" class="form-check-input"> <label class="form-check-label">Available</label></dd>
+        <dd>
+          <button onclick="SubmitClick()" class="btn btn-primary w-100 mt-2">Submit</button>
+        </dd>
+      </dl>
+    </div>
+
+    <div class="col-6">
+      <div id="detailsContainer" style="display: none;">
+        <h1>Product Details</h1>
+        <dl>
+          <dt>Product Name</dt>
+          <dd id="lblName"></dd>
+          <dt>Price</dt>
+          <dd id="lblPrice"></dd>
+          <dt>Rating</dt>
+          <dd id="lblRating"></dd>
+          <dt>Stock</dt>
+          <dd id="lblStock"></dd>
+        </dl>
+      </div>
+    </div>
+  </div> 
+</body>
+</html>
