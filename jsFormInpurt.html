@@ -1,11 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules//bootstrap/dist/css/bootstrap.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./src/script/inox.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div id="btnContainer">
+      <button class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#toolbar">
+        Quick Book
+      </button>
+    </div>
+
+    <div id="summaryContainer" class="my-4 mx-2" style="display: none;">
+      <div class="card m-2" style="width: 16rem;">
+        <div class="bi h5 bi-ticket-detailed py-2 px-2"> Booking Summary</div>
+        <div class="card-header">
+          <img class="card-img-top rounded rounded-4" id="imgPoster">
+        </div>
+      
+        <div class="card-body">
+          <dl class="row">
+            <dt class="col-4">Movie</dt>
+            <dd class="col-8" id="lblMovie"></dd>
+            <dt class="col-4">Date</dt>
+            <dd class="col-8" id="lblDate"></dd>
+            <dt class="col-4">Time</dt>
+            <dd class="col-8" id="lblTime"></dd>
+            <dt class="col-4">Theater</dt>
+            <dd class="col-8" id="lblTheater"></dd>
+          </dl>
+        </div>
+
+        <div class="card-footer">
+          <button onclick="ModifyClick()" class="btn btn-warning w-100 bi bi-pen-fill" data-bs-target="#toolbar" data-bs-toggle="modal"> Modify Booking</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="toolbar">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Book TIcket</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-between p-2">
+              <select class="form-select" id="lstMovie">
+                <option>Select Movie</option>
+                <option>Kingdom</option>
+                <option>Fantastic 5</option>
+              </select>
+              <select class="form-select" id="lstDate">
+                <option>Select Date</option>
+                <option>31 July</option>
+                <option>30 July</option>
+              </select>
+              <select class="form-select" id="lstTiming">
+                <option>Select Time</option>
+                <option>10:30 AM</option>
+                <option>04:30 PM</option>
+              </select>
+              <select class="form-select" id="lstCinema">
+                <option>Select Cinema</option>
+                <option>PVR Ameerpet</option>
+                <option>INOX B'hills</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="btnBook" class="btn btn-primary" data-bs-dismiss="modal" onclick="BookClick()">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
 </html>
