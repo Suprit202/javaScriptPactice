@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/js/bootstrap.bundle.js">
+  <title>Document</title>
+  <script>
+    function varifyEmail() {
+      var email = document.getElementById('txtEmail').value;
+      var lblEmail = document.getElementById('lblEmail');
+
+      if (email.indexOf('@')<2) {
+        lblEmail.innerHTML = `Invalid Email ID - must include @`.fontsize(2).fontcolor('red');
+      }
+      else if(email.endsWith('@gmail.com')){
+        lblEmail.innerHTML = '';
+      }
+      else{
+        lblEmail.innerHTML = `Invalid Email ID`.fontcolor('red');
+      }
+    }
+
+    function verifyCard() {
+      var card = document.getElementById('txtCard').value;
+      var imgCard = document.getElementById('imgCard');
+      if (card.startsWith("5454")) {
+        imgCard.src = `./public/image/mastercard.png`
+      } else{
+        imgCard.src = `./public/image/visa.png`
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+    <dl>
+      <dt>Email</dt>
+      <dd><input id="txtEmail" type="email" placeholder="Enter Your Email id" onblur="varifyEmail()"></dd>
+      <dd id="lblEmail"></dd>
+      <dt>Your card</dt>
+      <dd class="input-group">
+        <input class="form-control" id="txtCard" type="text" onkeyup="verifyCard()">
+        <img class="input-group-text" id="imgCard" width="70">
+      </dd>
+
+    </dl>
+  </div>
+</body>
+</html>
