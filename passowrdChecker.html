@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <title>Document</title>
+  <script>
+    function verifyPassword() {
+      var password = document.getElementById("txtPwd").value;
+      var lblPwd = document.getElementById("lblPwd");
+      var regExp = /(?=.*[A-Z])\w{4,15}/;
+      var meter = document.getElementById('meter');
+
+      if (password.match(regExp)) {
+
+        lblPwd.innerHTML = "Strong Password".fontcolor('green');
+
+        meter.style.width = "100%";
+
+        meter.classList.add('bg-success');
+        meter.classList.remove('bg-warning');
+      } 
+      else if((password.length > 2 && password.length < 4)) {
+
+          lblPwd.innerHTML = "Poor Password".fontcolor('goldenrod');
+
+          meter.style.width = "50%";
+
+          meter.classList.add('bg-warning');
+          meter.classList.remove('bg-danger');
+
+      }
+      else if((password.length < 2)){
+        lblPwd.innerHTML = "Weak Password".fontcolor('red');
+
+          meter.style.width = "25%";
+
+          meter.classList.add('bg-danger');
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <dl class="container-fluid mt-5 w-50">
+    <dt>Password</dt>
+    <dd><input class="form-control" type="password" id="txtPwd" onkeyup="verifyPassword()"></dd>
+    <dd>
+      <div class="progress" role="progressbar">
+        <div class="progress-bar" id="meter" style="width: 0%"></div>
+      </div>
+    </dd>
+    <dd id="lblPwd"></dd>
+  </dl>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script>
+    var msg = prompt('Enter Message: ');
+    let msgArr = msg.split(" ");
+    let ans = '';
+    msgArr.map(i => {
+      let first = i.charAt(0).toUpperCase();
+      let second = i.slice(1).toLowerCase();
+      let word = first + second;
+      ans = ans.concat(word + " ");
+    })
+
+    document.write(ans);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
