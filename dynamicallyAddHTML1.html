@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[type = 'file']{
+      display: block;
+    }
+  </style>
+
+  <script>
+    function handelClick() {
+      var input = document.createElement('input');
+      input.type = 'file';
+      document.querySelector('div').appendChild(input);
+    }
+  </script>
+</head>
+<body>
+  <h2>Field Upload <button onclick="handelClick()">More</button></h2>
+  <div>
+    <input type="file">
+  </div>
+</body>
+</html>

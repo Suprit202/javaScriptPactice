@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    header{
+      display: flex;
+      flex-direction: row;
+      justify-content:space-between;
+      background-color: lightcoral;
+      padding: 10px;
+    }
+
+    ul{
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+    }
+
+    span a{
+      margin: 0px 10px;
+    } 
+
+
+  </style>
+  <script>
+    var collection = ['All','Electronics','Fashion','Footwear'];
+
+    function bodyload() {
+      collection.map((item) => {
+        var span = document.createElement('span')
+        span.innerHTML = `<a>${item}</a>`;
+        document.querySelector('nav').appendChild(span);
+
+        var option = document.createElement('option');
+        option.innerText = item;
+        document.querySelector('select').appendChild(option);
+
+        var li1 = document.createElement('li')
+        li1.innerHTML = `<input type = 'checkbox' value = ${item}><label>${item}</label>`;
+        document.querySelector('ul').appendChild(li1);
+      })
+    }
+  </script>
+</head>
+<body onload="bodyload()">
+  <header>
+    <div>
+      Amazon
+    </div>
+
+    <nav>
+
+    </nav>
+
+    <div>
+      <button>Sign In</button>
+    </div>
+  </header>
+
+  <ul>
+
+  </ul>
+
+  <select>
+
+  </select>
+
+  <ul>
+
+  </ul>
+</body>
+</html>

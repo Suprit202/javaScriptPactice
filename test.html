@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <select id="fruitSelect" onchange="handelName()">
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+    <option value="orange">Orange</option>
+  </select>
+  <h1></h1>
+
+  <script>
+    function handelName() {
+      const fruitSelect = document.getElementById("fruitSelect");
+      const selectedFruit = fruitSelect.value;
+      document.querySelector('h1').innerText = `${selectedFruit}`;
+    }
+
+  </script>
+</body>
+
+</html>

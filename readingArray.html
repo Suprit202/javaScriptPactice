@@ -1,0 +1,28 @@
+<script>
+  var values = ['Home','Shop','Pages','Blog'];
+
+  document.write('<h2>Read All Properties Explicitly</h2>')
+
+  for(var value in values){
+    // document.write(value+' '); //0 1 2 3
+
+    // document.write(values[value] + " "); //Home Shop Pages Blog
+
+    document.write(`${value}:${values[value]} `); //Home Shop Pages Blog 
+  }
+
+  document.write('<h2>Read all values explicitly</h2>')
+
+  for(var value of values){
+    document.write(`${value} `);
+  }
+
+  document.write('<h2> toString() </h2>')
+
+  document.write(values.toString()+'<br>');
+
+  document.write('<h2> join(">") </h2>')
+
+  document.write(values.join('>')+'<br>');
+
+</script>

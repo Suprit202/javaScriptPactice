@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function handelShowImage() {
+      const img = document.createElement('img');
+      img.src = `./public/image/f1.png`;
+      img.width = '200';
+      img.height = '200';
+      document.querySelector('div').appendChild(img);
+    }
+  </script>
+</head>
+<body>
+  <button onclick="handelShowImage()">Click</button>
+  <div></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function login() {
+      const name = 'david123';
+      const pass = '12345';
+      let username = document.getElementById('username').value;
+      let password = document.getElementById('password').value;
+      let errorMsg = document.getElementById('errorMsg');
+
+      if (name === username && pass == password) {
+        document.write(`Login Successfully`);
+        // errorMsg.innerHTML = `Login Successfully`;
+      }
+      else{
+        errorMsg.innerHTML = 'Invalid Credentials';
+        errorMsg.style.color = 'red'
+      };
+    }
+  </script>
+</head>
+<body>
+  <dl>
+    <dt>User Name</dt>
+    <dd><input id="username" type="text"></dd>
+    <dt>Password</dt>
+    <dd><input id="password" type="password"></dd>
+  </dl>
+  <div id="errorMsg"></div>
+  <button onclick="login()">Login</button>
+</body>
+</html>

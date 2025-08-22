@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function ShopDiscount() {
+      let price = parseInt(document.getElementById('price').value);
+      let result = document.getElementById('result');
+
+      if (price >= 1000) {
+        result.innerHTML = `You need to pay ${price*(1-0.3)}, 30% discount applied`;
+      } 
+      else if(price >= 500 && price <= 1000){
+        result.innerHTML = `You need to pay ${price*(1-0.2)}, 20% discount applied`;
+      }
+      else{
+        result.innerHTML = `No discount available, you need to buy above 500Rs.`;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div>
+    <input type="number" id="price" placeholder="Enter your total amount">
+    <div id="result"></div>
+    <button onclick="ShopDiscount()">Submit</button>
+  </div>
+</body>
+</html>

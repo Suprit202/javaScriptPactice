@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    tbody tr:nth-child(odd) {
+
+      background-color: beige;
+
+    }
+
+    th {
+
+      background-color: darkkhaki;
+
+    }
+  </style>
+
+  <script>
+
+    var topics = ["CSS Units","CSS Colors", "CSS Selector", "CSS Box Model", "CSS Display"];
+
+    function bodyLoad() {
+      var table = document.createElement('table');
+      var thead = document.createElement('thead');
+      var tbody = document.createElement('tbody');
+      var thead_tr = document.createElement('tr');
+      var th = document.createElement('th');
+      
+
+      table.border = '1';
+      table.width = '300px';
+
+      th.innerText = 'CSS Topics';
+      thead_tr.appendChild(th);
+      thead.appendChild(thead_tr);
+      table.appendChild(thead);
+
+      topics.map(topic => {
+        var td = document.createElement('td');
+        var tbody_tr = document.createElement('tr');
+        td.innerHTML = topic;
+        tbody_tr.appendChild(td);
+        tbody.appendChild(tbody_tr);
+      })
+      table.appendChild(tbody);
+      
+      document.querySelector('body').appendChild(table);
+    }
+
+  </script>
+</head>
+
+<body onload="bodyLoad()">
+
+</body>
+
+</html>
