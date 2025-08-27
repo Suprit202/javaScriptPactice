@@ -1,0 +1,18 @@
+<script>
+  var result;
+  var password = prompt(`Enter Password`);
+
+  if (password === 'admin') {
+    result = function() {
+      document.write(`<h2>Login Successfully</h2>`)
+    }
+  }
+  else{
+    result = () => {
+      alert(`Invalid Password`);
+    }
+  }
+
+  result();
+
+</script>

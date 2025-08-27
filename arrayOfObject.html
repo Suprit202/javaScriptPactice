@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <title>Document</title>
+  <script>
+    function bodyLoad() {
+      fetch('./public/db.json')
+      .then(res => {
+        return res.json();
+      })
+      .then(products => {
+        products.map( product => {
+          var tr = document.createElement('tr');
+          var tdName = document.createElement('td');
+          var tdPrice = document.createElement('td');
+          var tdAction = document.createElement('td');
+          tdName.textContent = product.Name;
+          tdPrice.textContent = product.Price;
+          tdAction.innerHTML = `<button class='bi bi-pen-fill btn btn-warning'></button> <button class='bi bi-trash btn btn-danger'></button>`
+          tr.appendChild(tdName);
+          tr.appendChild(tdPrice);
+          tr.appendChild(tdAction);
+          document.querySelector('tbody').appendChild(tr);
+        })
+      })
+    }
+  </script>
+</head>
+<body onload="bodyLoad()">
+  <h2>Product Table</h2>
+  <table class="table table-hover container-fluid">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</body>
+</html>

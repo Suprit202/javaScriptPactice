@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="./src/script/timeEvent.js"></script>
+  <title>Document</title>
+</head>
+
+<body onload="LoadProduct(1)" class="container-fluid d-flex justify-content-center">
+
+  <div class="card mt-4 w-50 p-2">
+
+    <div class="card-header text-center">
+
+      <div id="lblTitle"></div>
+
+      <div id="lblStatus" class="fw-bold"></div>
+
+    </div>
+
+    <div class="card-body">
+
+      <div class="row">
+
+        <div class="col-1 d-flex flex-column justify-content-center align-items-center">
+
+          <button onclick="PrevClick()" class="btn btn-dark bi bi-chevron-left"></button>
+
+        </div>
+
+        <div class="col-10">
+
+          <img height="300" id="imgProduct" class="w-100">
+
+          <div class="my-2">
+
+            <input onchange="SeekBarChange()" type="range" id="seekBar" class="form-range" value="1" min="1" max="20">
+
+          </div>
+
+        </div>
+
+        <div class="col-1 d-flex flex-column justify-content-center align-items-center">
+
+          <button onclick="NextClick()" class="btn btn-dark bi bi-chevron-right"></button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card-footer text-center">
+
+      <button onclick="StartClick()" class="btn btn-primary bi bi-play mx-2"></button>
+
+      <button onclick="PauseClick()" class="btn btn-warning bi bi-pause mx-2"></button>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script>
+    function bodyLoad() {
+      fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=5KOKb5dPI6nhFhypaiWA2TMGvbOQyPYltvkRQO3K')
+      .then(res => { return res.json();})
+      .then(products => {
+        products.photos.map(product => {
+          var div = document.createElement('div');
+          div.className = "card m-2 p-2";
+          div.style.width = '200px';
+          div.innerHTML = `
+            <img src=${product.img_src} class='card-img-top' height='150'>
+            <div class='card-header'>
+              ${product.id}
+            </div>
+            <div class='card-body'>
+              <dl>
+                <dt class='bi bi-camera'> Camera</dt>
+                <dd>${product.camera.full_name}</dd>
+                <dt class='bi bi-rocket'> Rover</dt>
+                <dd>${product.rover.name}</dd>
+              </dl>
+            </div>
+            <div class='card-footer'>
+              <a class='btn btn-primary bi bi-eye w-100' href = ${product.img_src} target="_blank"> View</a>
+            </div>
+          `;
+
+          document.querySelector('section').appendChild(div);
+        })
+      })
+    }
+  </script>
+  <title>Document</title>
+</head>
+
+<body class="container-fluid" onload="bodyLoad()">
+  <header class="text-center">
+    <div class="fs-5 fw-bold bg-warning py-3">Mars Rover Photos</div>
+  </header>
+  <section class="d-flex g-3 flex-wrap overflow-auto" style="height: 600px;">
+
+  </section>
+</body>
+
+</html>

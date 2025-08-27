@@ -1,0 +1,19 @@
+<script>
+  try {
+    let x = 10;
+    let y = -10;
+    ans = x/y;
+
+    if(y === 0){
+      throw "value of denominator can't be zero !!!<br>";
+    }
+    if (y < 0) {
+      throw "value of denominator can't be negative !!!<br>"
+    }
+  } catch (error) {
+    document.write(error);
+  }
+  finally{
+    document.write(ans);
+  }
+</script>

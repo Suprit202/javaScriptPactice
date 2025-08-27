@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+   <script>
+
+    var thread;
+
+    function Clock() {
+      var now = new Date();
+      var time = now.toLocaleTimeString();
+      document.getElementById('timer').innerHTML = time;
+    }
+
+    function BodyLoad() {
+      thread = setInterval(Clock,1000);
+    }
+
+    function PushClick() {
+      clearInterval(thread);
+    }
+
+    function ResumeClick() {
+      thread = setInterval(Clock,1000);
+    }
+   </script>
+ </head>
+ 
+ <body class="container-fluid d-flex flex-column justify-content-center align-items-center" style="height:500px;" onload="BodyLoad()">
+  <div class="bg-primary p-5 rounded-5 shadow-lg">
+    <h1 id="timer" class="text-light fw-bold mb-3"></h1>
+    <span><button id="resume" onclick="ResumeClick()">Resume</button></span>
+    <span><button id="push" onclick="PushClick()">Push</button></span>
+  </div>
+ </body>
+
+</html>

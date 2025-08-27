@@ -1,0 +1,28 @@
+<script>
+  var depature = new Date()
+
+  document.write(`The time is ${depature} <br>`);
+
+  var weekdays =  ["Sunday", "Monday", "Tue", "Wed", "Thr", "Friday", "Saturday"];
+
+  var months = ["January", "Feb", "March", "April", "May", "June", "July", "August", "Sep","Oct", "Nov", "December"];
+
+  document.write(`${weekdays[depature.getDay()]} ${depature.getDate()} ${months[depature.getMonth()]} ${depature.getFullYear()} <br>`)
+
+  // depature.setHours(18)
+
+  // document.write(`The time is ${depature} <br>`);
+
+  var hrs = depature.getHours();
+
+  document.write(`${hrs}<br>`)
+
+  if (hrs>=0 && hrs <=12) {
+    document.write(`<h2>Good Morning</h2>`);
+  }
+  else if(hrs>12 && hrs<=17){
+    document.write(`<h2>Good Afternoon</h2>`);
+  }else{
+    document.write(`<h2>Good Night</h2>`);
+  }
+</script>

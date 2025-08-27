@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="./src/script/apiFetch.js"></script>
+  <title>Document</title>
+</head>
+<body class="bg-body-secondary">
+  <div class="container-fluid d-flex flex-row justify-content-center h-75">
+    <div class="w-50 rounded-4 bg-light mt-5 p-3" style="height: 50%;">
+      <div class="input-group my-2">
+        <input type="text" id="txtCity" class="form-control w-75" placeholder="Enter Your Location">
+        <button onclick="SearchClick()" class="bi bi-search btn btn-warning form-control"></button>
+      </div>
+      <div id="txtlocation" class="bi bi-geo h2 my-3"></div>
+      <div class="container">
+        <div id="txtTemp" class="bg-primary rounded my-2 px-2 py-4 text-white"></div>
+        <div id="txtPressure" class="bg-primary rounded my-2 px-2 py-4 my-2 text-white"></div>
+        <div id="txtHumidity" class="bg-primary rounded my-2 px-2 py-4 text-white"></div>
+        <div id="txtSpeed" class="bg-primary rounded my-2 px-2 py-4 my-2 text-white"></div>
+      </div>
+      <div id="txtWheather" class="h2 my-3"></div>
+    </div>
+  </div>
+</body>
+</html>
