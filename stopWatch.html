@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <title>Document</title>
+  <script>
+    var ms = 0, sec = 0, min = 0, hr = 0, thread;
+
+    function OnBodyLoad() {
+      document.getElementById('lblMs').innerHTML = `${ms}`;
+      document.getElementById('lblSeconds').innerHTML = `${sec}`;
+      document.getElementById('lblMinutes').innerHTML = `${min}`;
+      document.getElementById('lblHours').innerHTML = `${hr}`;
+    }
+
+    function StopWatch() {
+      ms++;
+      document.getElementById('lblMs').innerHTML = `${ms}`;
+
+      if (ms === 399) {
+        ms = 0;
+        sec++;
+        document.getElementById('lblSeconds').innerHTML=`${sec}`;
+
+        if(sec > 59){
+          ms = 0;
+          sec = 0;
+          min++;
+          document.getElementById('lblMinutes').innerHTML=`${min}`;
+
+          if (min > 59) {
+            ms = 0;
+            sec = 0;
+            min = 0;
+            hr++;
+            document.getElementById('lblHours').innerHTML = `${hr}`;
+          }
+        }
+      }
+    }
+
+    function StartClick() {
+      thread = setInterval(StopWatch,1);
+    }
+
+    function PauseClick() {
+      clearInterval(thread);
+    }
+
+    function ClearClick() {
+      clearInterval(thread);
+      ms = 0, sec = 0, min = 0, hr = 0;
+      document.getElementById('lblMs').innerHTML = `${ms}`;
+      document.getElementById('lblSeconds').innerHTML = `${sec}`;
+      document.getElementById('lblMinutes').innerHTML = `${min}`;
+      document.getElementById('lblHours').innerHTML = `${hr}`;
+    }
+  </script>
+</head>
+
+<body class="container-fluid d-flex justify-content-center" onload="OnBodyLoad()">
+
+  <div class="mt-5 w-50">
+
+    <div class="row fs-4 mb-4" style="height:50px">
+
+      <div class="col text-center p-2 border border-1">
+
+        <span id="lblHours"></span>
+
+      </div>
+
+      <div class="col text-center p-2 border border-1">
+
+        <span id="lblMinutes"></span>
+
+      </div>
+
+      <div class="col text-center p-2 border border-1">
+
+        <span id="lblSeconds"></span>
+
+      </div>
+
+      <div class="col text-center p-2 border border-1">
+
+        <span id="lblMs"></span>
+
+      </div>
+
+    </div>
+
+    <div class="mt-2 d-flex justify-content-center">
+
+      <button onclick="StartClick()" class="btn btn-primary"> Start </button>
+
+      <button onclick="PauseClick()" class="btn btn-warning mx-2">Pause</button>
+
+      <button class="btn btn-danger" onclick="ClearClick()">Clear</button>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
