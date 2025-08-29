@@ -1,0 +1,9 @@
+<script>
+  function GetList() {
+    return [{Name:'TV', Price:'5000'},{Name:'Mobile', Price:'24000'}]
+  }
+
+  GetList().map(item => {
+    document.write(`${item.Name} - ${item.Price} <br>`);
+  })
+</script>

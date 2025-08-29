@@ -1,0 +1,25 @@
+<script>
+  let FetchAPI = new Promise((resolve,reject) => {
+    let url = prompt(`Enter the URL`);
+
+    if (url === 'fakestore') {
+      resolve([{ Name: "tv", Price: 24000 }]);
+    }
+    else {
+      reject(`Invalid URL - Unable to Fetch`);
+    }
+  })
+
+  FetchAPI.then((res) => {
+    console.log(res);
+  })
+  .then(()=>{
+    console.log(`Data fetch successfully !!!`);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(()=>{
+    console.log(`Request End`);
+  })
+</script>
